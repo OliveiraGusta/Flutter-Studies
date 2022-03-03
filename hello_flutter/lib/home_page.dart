@@ -24,8 +24,20 @@ class HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('$counter\º vez que apertou o botão'),
+            Text('$counter\º vez que você apertou o botão'),
+            Container(height: 20),
             CustomSwith(),
+            Container(height: 50),
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(height: 100, width: 100, color: Colors.purple),
+                  Container(
+                      height: 100, width: 100, color: Colors.purpleAccent),
+                  Container(
+                      height: 100, width: 100, color: Colors.deepPurpleAccent),
+                ])
           ],
         ),
       ),
