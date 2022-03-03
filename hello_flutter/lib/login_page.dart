@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hello_flutter/home_page.dart';
 
-class Login_Page extends StatefulWidget {
+class LoginPage extends StatefulWidget {
   @override
-  State<Login_Page> createState() => _Login_PageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _Login_PageState extends State<Login_Page> {
+class _LoginPageState extends State<LoginPage> {
   String email = '';
   String password = '';
 
@@ -47,7 +48,7 @@ class _Login_PageState extends State<Login_Page> {
                 RaisedButton(
                     onPressed: () {
                       if (email == 'gustavo@etec.com' && password == '123g') {
-                        print('Entrou');
+                        Navigator.of(context).pushReplacementNamed('/home');
                       } else {
                         print('login invalido');
                       }
@@ -61,5 +62,3 @@ class _Login_PageState extends State<Login_Page> {
     );
   }
 }
-
-class RaiseButton {}
