@@ -28,38 +28,58 @@ class _LoginPageState extends State<LoginPage> {
                     height: 300,
                     child: Image.asset('../assets/images/logo.png'),
                   ),
-                  Container(height: 10),
-                  TextField(
-                    onChanged: (text) {
-                      email = text;
-                    },
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      labelText: 'Email',
-                      border: OutlineInputBorder(),
+                  Container(height: 5),
+                  Card(
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          left: 10, right: 10, top: 15, bottom: 10),
+                      child: Column(
+                        children: [
+                          TextField(
+                            onChanged: (text) {
+                              email = text;
+                            },
+                            keyboardType: TextInputType.emailAddress,
+                            decoration: InputDecoration(
+                              labelText: 'Email',
+                              border: OutlineInputBorder(),
+                            ),
+                          ),
+                          Container(height: 10),
+                          TextField(
+                            onChanged: (text) {
+                              password = text;
+                            },
+                            obscureText: true,
+                            decoration: InputDecoration(
+                              labelText: 'Password',
+                              border: OutlineInputBorder(),
+                            ),
+                          ),
+                          Container(height: 15),
+                          RaisedButton(
+                            color: Colors.blueAccent,
+                            onPressed: () {
+                              if (email == 'gustavo@etec.com' &&
+                                  password == '123g') {
+                                Navigator.of(context)
+                                    .pushReplacementNamed('/home');
+                              } else {
+                                print('login invalido');
+                              }
+                            },
+                            child: Container(
+                              width: double.infinity,
+                              child: Text(
+                                'Entrar',
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                  Container(height: 10),
-                  TextField(
-                    onChanged: (text) {
-                      password = text;
-                    },
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      labelText: 'Password',
-                      border: OutlineInputBorder(),
-                    ),
-                  ),
-                  Container(height: 15),
-                  RaisedButton(
-                      onPressed: () {
-                        if (email == 'gustavo@etec.com' && password == '123g') {
-                          Navigator.of(context).pushReplacementNamed('/home');
-                        } else {
-                          print('login invalido');
-                        }
-                      },
-                      child: Text('Entrar'))
                 ],
               ),
             ),
@@ -77,7 +97,9 @@ class _LoginPageState extends State<LoginPage> {
           height: MediaQuery.of(context).size.height,
           child: Image.asset('../assets/images/wallpaper-login.jpg',
               fit: BoxFit.cover)),
-      Container(color: Colors.black.withOpacity(0.3),),
+      Container(
+        color: Colors.black.withOpacity(0.3),
+      ),
       _body(),
     ]));
   }
