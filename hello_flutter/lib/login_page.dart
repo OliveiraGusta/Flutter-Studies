@@ -69,10 +69,16 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body:
-     _body());
+    return Scaffold(
+        body: Stack(children: [
+      SizedBox(
+          height: MediaQuery.of(context).size.height,
+          child: Image.asset('../assets/images/wallpaper-login.jpg',
+              fit: BoxFit.cover)),
+      Container(color: Colors.black.withOpacity(0.3),),
+      _body(),
+    ]));
   }
 }
