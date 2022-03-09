@@ -86,18 +86,24 @@ class HomePageState extends State<HomePage> {
             Container(
               width: double.infinity,
               height: 300,
-              color: Colors.blue,
+              color: Colors.green,
             ),
             Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(height: 100, width: 100, color: Colors.purple),
-                  Container(
-                      height: 100, width: 100, color: Colors.purpleAccent),
-                  Container(
-                      height: 100, width: 100, color: Colors.deepPurpleAccent),
-                ])
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(height: 150, width: 250, color: Colors.purple),
+                Container(height: 150, width: 250, color: Colors.purpleAccent),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(height: 150, width: 250, color: Colors.blue),
+                Container(height: 150, width: 250, color: Colors.lightBlue),
+              ],
+            )
           ],
         ),
       ),
