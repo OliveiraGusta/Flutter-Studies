@@ -8,6 +8,7 @@ class InitialPage extends StatefulWidget {
 class _InitialPageState extends State<InitialPage> {
   String userLogin = '';
   String passwordLogin = '';
+  bool _isObscure = true;
 
   Widget initialBody() {
     return Padding(
@@ -61,17 +62,25 @@ class _InitialPageState extends State<InitialPage> {
                         onChanged: (text) {
                           passwordLogin = text;
                         },
-                        obscureText: true,
-                        keyboardType: TextInputType.visiblePassword,
+                        obscureText: _isObscure,
                         decoration: InputDecoration(
                           labelText: 'Senha',
                           border: OutlineInputBorder(),
+                          suffixIcon: IconButton(
+                              icon: Icon(_isObscure
+                                  ? Icons.visibility
+                                  : Icons.visibility_off),
+                              onPressed: () {
+                                setState(() {
+                                  _isObscure = !_isObscure;
+                                });
+                              }),
                         ),
                       ),
                       SizedBox(height: 20),
                       ButtonTheme(
                         height: 60.0,
-                        child: RaisedButton(
+                        child: RaisedButton(                      
                           color: Colors.white,
                           onPressed: () {
                             if (userLogin == 'Gustavo' &&
