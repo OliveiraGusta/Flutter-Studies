@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "146959137708",
+    "project_id": "flutter-etec-gustavo",
+    "storage_bucket": "flutter-etec-gustavo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146959137708:android:e878af4def130506339809",
+        "android_client_info": {
+          "package_name": "com.example.aula_09_03"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "146959137708-k6j7t3dhh63b8dvqs7067m45b227cppq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE5rkZxspQ6ZzC9Q0rXnL42Z59AlAr3QM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "146959137708-k6j7t3dhh63b8dvqs7067m45b227cppq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
