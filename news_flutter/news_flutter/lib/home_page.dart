@@ -49,7 +49,7 @@ class HomePageState extends State<HomePage> {
               subtitle: Text('Tecnologias inovadoras'),
               onTap: () {
                 //Navigator.of(context).pushReplacementNamed('/');
-                print('Tech');
+                print('tech');
               },
             ),
             ListTile(
@@ -58,7 +58,7 @@ class HomePageState extends State<HomePage> {
               subtitle: Text('Mundo dos jogos'),
               onTap: () {
                 // Navigator.of(context).pushReplacementNamed('/');
-                print('Games');
+                print('games');
               },
             ),
             ListTile(
