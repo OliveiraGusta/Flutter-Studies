@@ -12,9 +12,11 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
+     
       animation: AppController.instance,
       builder: (context, Widget? child) {
         return MaterialApp(
+          
           theme: ThemeData(
               primarySwatch: Colors.deepPurple,
               brightness: AppController.instance.isDartTheme

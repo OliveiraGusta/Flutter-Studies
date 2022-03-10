@@ -10,7 +10,6 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
-  int counter = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,7 +74,7 @@ class HomePageState extends State<HomePage> {
         ),
       ),
       appBar: AppBar(
-        title: Text('News Flutter'),
+        title: Text('ETEC NEWS'),
       ),
       body: Container(
         width: double.infinity,
