@@ -10,6 +10,72 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
+  Widget homePageBody() {
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                width: double.infinity,
+                height: 400,
+                color: Colors.green,
+              ),
+            ),
+          ),
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(height: 250, width: 250, color: Colors.blue),
+                    Container(height: 250, width: 250, color: Colors.redAccent),
+                  ],
+                ),
+                Container(
+                    height: 400,
+                    width: double.infinity,
+                    color: Colors.lightBlue),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(height: 250, width: 250, color: Colors.blue),
+                    Container(height: 250, width: 250, color: Colors.redAccent),
+                  ],
+                ),
+                Container(
+                    height: 400,
+                    width: double.infinity,
+                    color: Colors.lightBlue),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(height: 250, width: 250, color: Colors.blue),
+                    Container(height: 250, width: 250, color: Colors.redAccent),
+                  ],
+                ),
+                Container(
+                    height: 400,
+                    width: double.infinity,
+                    color: Colors.lightBlue),
+                Text(
+                  'By Gustavo Oliveira',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,7 +134,7 @@ class HomePageState extends State<HomePage> {
                 Navigator.of(context).pushReplacementNamed('/');
               },
             ),
-            Text('Mudar Thema'),
+            Text('Mudar Tema'),
             CustomSwith(),
           ],
         ),
@@ -76,36 +142,7 @@ class HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('ETEC NEWS'),
       ),
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Container(
-              width: double.infinity,
-              height: 300,
-              color: Colors.green,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(height: 150, width: 250, color: Colors.purple),
-                Container(height: 150, width: 250, color: Colors.purpleAccent),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(height: 150, width: 250, color: Colors.blue),
-                Container(height: 150, width: 250, color: Colors.lightBlue),
-              ],
-            )
-          ],
-        ),
-      ),
+      body: homePageBody(),
     );
   }
 }

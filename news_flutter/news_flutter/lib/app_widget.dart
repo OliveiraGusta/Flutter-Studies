@@ -25,9 +25,9 @@ class AppWidget extends StatelessWidget {
           routes: {
             '/': (context) => InitialPage(),
             '/home': (context) => HomePage(),
-        /*  '/money': (context) => InitialPage(),
-            '/tech': (context) => InitialPage(),
-            '/games': (context) => InitialPage(),*/
+        /*  '/money': (context) => classHere(),
+            '/tech': (context) => classHere(),
+            '/games': (context) => classHere(),*/
           },
         );
       },
