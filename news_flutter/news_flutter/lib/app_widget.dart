@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_flutter/games_page.dart';
 import 'package:news_flutter/initial_page.dart';
 
 import 'app_controller.dart';
@@ -26,8 +27,8 @@ class AppWidget extends StatelessWidget {
             '/': (context) => InitialPage(),
             '/home': (context) => HomePage(),
         /*  '/money': (context) => classHere(),
-            '/tech': (context) => classHere(),
-            '/games': (context) => classHere(),*/
+            '/tech': (context) => classHere(),*/
+            '/games': (context) => GamesPage(),
           },
         );
       },

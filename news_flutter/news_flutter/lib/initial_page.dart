@@ -40,7 +40,7 @@ class _InitialPageState extends State<InitialPage> {
                                 width: 15,
                               ),
                               Text(
-                                'ETEC NEWS',
+                                'BULLET NEWS',
                                 style: TextStyle(
                                     fontSize: 50, fontWeight: FontWeight.w100),
                               ),
