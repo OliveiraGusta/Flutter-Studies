@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class InitialPage extends StatefulWidget {
+class LoginPage extends StatefulWidget {
   @override
-  State<InitialPage> createState() => _InitialPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _InitialPageState extends State<InitialPage> {
+class _LoginPageState extends State<LoginPage> {
   String userLogin = '';
   String passwordLogin = '';
   bool _isObscure = true;

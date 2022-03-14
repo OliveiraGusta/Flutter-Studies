@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'app_controller.dart';
+import 'app_widget.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -10,6 +11,68 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
+  Widget drawer() {
+    return Drawer(
+      child: Column(
+        children: [
+          UserAccountsDrawerHeader(
+            currentAccountPicture: ClipRRect(
+              borderRadius: BorderRadius.circular(40),
+              child: Image.network(
+                  'https://avatars.githubusercontent.com/u/96364591?v=4'),
+            ),
+            accountName: Text('Gustavo Oliveira'),
+            accountEmail: Text('gustavo@etec.com'),
+          ),
+          ListTile(
+            leading: Icon(Icons.home),
+            title: Text('Inicio'),
+            subtitle: Text('O começo de tudo'),
+            onTap: () {
+              Navigator.of(context).pushReplacementNamed('/home');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.attach_money),
+            title: Text('Economia'),
+            subtitle: Text('Bolsa ou Criptmoedas'),
+            onTap: () {
+              //Navigator.of(context).pushReplacementNamed('/');
+              print('money');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.code),
+            title: Text('Tecnologias '),
+            subtitle: Text('Tecnologias inovadoras'),
+            onTap: () {
+              //Navigator.of(context).pushReplacementNamed('/');
+              print('tech');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.games),
+            title: Text('Jogos'),
+            subtitle: Text('Mundo dos jogos'),
+            onTap: () {
+              Navigator.of(context).pushNamed('/games');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.exit_to_app),
+            title: Text('Logout'),
+            subtitle: Text('Sair da sua conta'),
+            onTap: () {
+              Navigator.of(context).pushReplacementNamed('/');
+            },
+          ),
+          Text('Mudar Tema'),
+          CustomSwith(),
+        ],
+      ),
+    );
+  }
+
   Widget homePageBody() {
     return SingleChildScrollView(
       child: Column(
@@ -77,69 +140,10 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: Container(
-        child: Drawer(
-          child: Column(
-            children: [
-              UserAccountsDrawerHeader(
-                currentAccountPicture: ClipRRect(
-                  borderRadius: BorderRadius.circular(40),
-                  child: Image.network(
-                      'https://avatars.githubusercontent.com/u/96364591?v=4'),
-                ),
-                accountName: Text('Gustavo Oliveira'),
-                accountEmail: Text('gustavo@etec.com'),
-              ),
-              ListTile(
-                leading: Icon(Icons.home),
-                title: Text('Inicio'),
-                subtitle: Text('O começo de tudo'),
-                onTap: () {
-                  Navigator.of(context).pushReplacementNamed('/home');
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.attach_money),
-                title: Text('Economia'),
-                subtitle: Text('Bolsa ou Criptmoedas'),
-                onTap: () {
-                  //Navigator.of(context).pushReplacementNamed('/');
-                  print('money');
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.code),
-                title: Text('Tecnologias '),
-                subtitle: Text('Tecnologias inovadoras'),
-                onTap: () {
-                  //Navigator.of(context).pushReplacementNamed('/');
-                  print('tech');
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.games),
-                title: Text('Jogos'),
-                subtitle: Text('Mundo dos jogos'),
-                onTap: () {
-                  Navigator.of(context).pushReplacementNamed('/games');
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.exit_to_app),
-                title: Text('Logout'),
-                subtitle: Text('Sair da sua conta'),
-                onTap: () {
-                  Navigator.of(context).pushReplacementNamed('/');
-                },
-              ),
-              Text('Mudar Tema'),
-              CustomSwith(),
-            ],
-          ),
-        ),
-      ),
+      endDrawer: drawer(),
       appBar: AppBar(
-        title: Text('Bullet News'),
+        title: Text(AppWidget.title),
+        centerTitle: true,
       ),
       body: homePageBody(),
     );
