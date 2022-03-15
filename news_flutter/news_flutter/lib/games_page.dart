@@ -83,40 +83,39 @@ class _GamesPageState extends State<GamesPage> {
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.only(
+                        top: 10, right: 10, bottom: 2, left: 10),
                     child: SizedBox(
-                      height: 300,
-                      width: MediaQuery.of(context).size.width,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(45),
-                        child: Image.network(
-                            'https://img.olhardigital.com.br/wp-content/uploads/2022/03/Minecraft-1024x532.jpg'),
-                      ),
+                      child: Image.network(
+                          'https://img.olhardigital.com.br/wp-content/uploads/2022/03/Minecraft-1024x532.jpg'),
                     ),
                   ),
-                  SizedBox(
-                    height: 10,
-                  ),
+                  SizedBox(height: 2),
                   Padding(
-                    padding: const EdgeInsets.all(12.0),
+                    padding: const EdgeInsets.all(10.0),
                     child: Column(
                       children: [
                         Text(
                           "Programador lidera time que irá recriar cidade inteira de Nova Iorque dentro do Minecraft",
-                          //  style: TextStyle(color: Colors.white),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         ),
-                        SizedBox(
-                          height: 10,
-                        ),
+                        SizedBox(height: 10),
                         Text(
-                          "o valor é o dobro do acordo atual. A EA não deve aceitar os novos termos e poderá mudar o nome do jogo para “EA Sports F.C.”. O primeiro jogo da série, “FIFA International Soccer”, foi lançado há quase 30 anos, em 1993. As informações são do The New York Times.",
+                          "O valor é o dobro do acordo atual. A EA não deve aceitar os novos termos e poderá mudar o nome do jogo para “EA Sports F.C.”. O primeiro jogo da série, “FIFA International Soccer”, foi lançado há quase 30 anos, em 1993. As informações são do The New York Times.",
+                          textAlign: TextAlign.center,
                           // style: TextStyle(color: Colors.white),
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 10,
+                  Container(
+                    alignment: Alignment.bottomCenter,
+                    margin: EdgeInsets.only(top: 20, bottom: 20),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text("Pesquisar sobre"),
+                    ),
                   ),
                 ],
               ),
@@ -140,7 +139,7 @@ class _GamesPageState extends State<GamesPage> {
                     ),
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 5,
                   ),
                   Padding(
                     padding: const EdgeInsets.all(12.0),
@@ -148,20 +147,26 @@ class _GamesPageState extends State<GamesPage> {
                       children: [
                         Text(
                           "Nintendo domina Top 20 de jogos mais vendidos nos EUA",
-                          //  style: TextStyle(color: Colors.white),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         SizedBox(
                           height: 10,
                         ),
                         Text(
                           "Apenas um jogo, “NBA 2K22”, para o PlayStation 4, entrou na lista (na vigésima posição). O jogo mais vendido do ano, segundo a compilação da Amazon, foi o “Super Mario 3D World + Bowser’s Fury”. As informações são do site DualShockers.",
-                          // style: TextStyle(color: Colors.white),
+                          textAlign: TextAlign.center,
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 10,
+                  Container(
+                    alignment: Alignment.bottomCenter,
+                    margin: EdgeInsets.only(top: 20, bottom: 20),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text("Pesquisar sobre"),
+                    ),
                   ),
                 ],
               ),
@@ -185,7 +190,7 @@ class _GamesPageState extends State<GamesPage> {
                     ),
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 5,
                   ),
                   Padding(
                     padding: const EdgeInsets.all(12.0),
@@ -193,20 +198,26 @@ class _GamesPageState extends State<GamesPage> {
                       children: [
                         Text(
                           "FIFA quer 1 bilhão de dólares para manter marca da organização na série de jogos de futebol da Electronic Arts",
-                          //  style: TextStyle(color: Colors.white),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         SizedBox(
                           height: 10,
                         ),
                         Text(
-                          "o valor é o dobro do acordo atual. A EA não deve aceitar os novos termos e poderá mudar o nome do jogo para “EA Sports F.C.”. O primeiro jogo da série, “FIFA International Soccer”, foi lançado há quase 30 anos, em 1993. As informações são do The New York Times.",
-                          // style: TextStyle(color: Colors.white),
+                          "O valor é o dobro do acordo atual. A EA não deve aceitar os novos termos e poderá mudar o nome do jogo para “EA Sports F.C.”. O primeiro jogo da série, “FIFA International Soccer”, foi lançado há quase 30 anos, em 1993. As informações são do The New York Times.",
+                          textAlign: TextAlign.center,
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 10,
+                  Container(
+                    alignment: Alignment.bottomCenter,
+                    margin: EdgeInsets.only(top: 20, bottom: 20),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text("Pesquisar sobre"),
+                    ),
                   ),
                 ],
               ),
@@ -222,7 +233,7 @@ class _GamesPageState extends State<GamesPage> {
     return Scaffold(
       endDrawer: drawer(),
       appBar: AppBar(
-        title: Text(AppWidget.title + " Games"),
+        title: Text(AppWidget.title.first + " Gaming " + AppWidget.title.last),
         centerTitle: true,
       ),
       body: gamesPageBody(),

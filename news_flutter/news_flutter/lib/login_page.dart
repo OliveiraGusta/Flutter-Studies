@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_flutter/app_widget.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -33,16 +34,24 @@ class _LoginPageState extends State<LoginPage> {
                             children: [
                               SizedBox(
                                 width: 50,
-                                child: Image.network(
-                                    'https://store-images.s-microsoft.com/image/apps.38986.9007199266245737.4ac20127-5f19-4331-ac09-d2ce324e483a.6ce1617b-b233-4789-ad55-712caf23cfb3'),
+                                child: Icon(
+                                  Icons.timer_outlined,
+                                  color: Colors.red,
+                                  size: 50,
+                                ),
                               ),
                               SizedBox(
-                                width: 15,
+                                width: 5,
                               ),
                               Text(
-                                'BULLET NEWS',
+                                AppWidget.title.first + " ",
                                 style: TextStyle(
-                                    fontSize: 50, fontWeight: FontWeight.w100),
+                                    fontSize: 30, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                AppWidget.title.last,
+                                style: TextStyle(
+                                    fontSize: 30, fontWeight: FontWeight.w100),
                               ),
                             ],
                           ),

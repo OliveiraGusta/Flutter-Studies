@@ -142,7 +142,9 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       endDrawer: drawer(),
       appBar: AppBar(
-        title: Text(AppWidget.title),
+        title: Text(
+          AppWidget.title.first + " " + AppWidget.title.last,
+        ),
         centerTitle: true,
       ),
       body: homePageBody(),
