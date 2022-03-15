@@ -37,7 +37,7 @@ class HomePageState extends State<HomePage> {
             title: Text('Economia'),
             subtitle: Text('Bolsa ou Criptmoedas'),
             onTap: () {
-              //Navigator.of(context).pushReplacementNamed('/');
+              //Navigator.of(context).pushReplacementNamed('/economy');
               print('money');
             },
           ),
@@ -46,7 +46,7 @@ class HomePageState extends State<HomePage> {
             title: Text('Tecnologias '),
             subtitle: Text('Tecnologias inovadoras'),
             onTap: () {
-              //Navigator.of(context).pushReplacementNamed('/');
+              //Navigator.of(context).pushReplacementNamed('/technology');
               print('tech');
             },
           ),
