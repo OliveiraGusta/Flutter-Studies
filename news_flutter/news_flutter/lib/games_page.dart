@@ -111,10 +111,27 @@ class _GamesPageState extends State<GamesPage> {
                   ),
                   Container(
                     alignment: Alignment.bottomCenter,
-                    margin: EdgeInsets.only(top: 20, bottom: 20),
+                    margin: EdgeInsets.only(
+                        top: 20, right: 10, left: 10, bottom: 20),
                     child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text("Pesquisar sobre"),
+                      onPressed: () {
+                        //ABRIR LINK DE PESQUISA NO GOOGLE
+                        print('PESQUISA 1');
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.search_outlined),
+                          Padding(
+                            padding: EdgeInsets.all(16),
+                            child: Text(
+                              'Pesquisar Sobre',
+                              style: TextStyle(
+                                  fontSize: 15, fontWeight: FontWeight.w100),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -162,10 +179,27 @@ class _GamesPageState extends State<GamesPage> {
                   ),
                   Container(
                     alignment: Alignment.bottomCenter,
-                    margin: EdgeInsets.only(top: 20, bottom: 20),
+                    margin: EdgeInsets.only(
+                        top: 20, right: 10, left: 10, bottom: 20),
                     child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text("Pesquisar sobre"),
+                      onPressed: () {
+                        //ABRIR LINK DE PESQUISA NO GOOGLE
+                        print('PESQUISA 2');
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.search_outlined),
+                          Padding(
+                            padding: EdgeInsets.all(16),
+                            child: Text(
+                              'Pesquisar Sobre',
+                              style: TextStyle(
+                                  fontSize: 15, fontWeight: FontWeight.w100),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -213,10 +247,28 @@ class _GamesPageState extends State<GamesPage> {
                   ),
                   Container(
                     alignment: Alignment.bottomCenter,
-                    margin: EdgeInsets.only(top: 20, bottom: 20),
+                    margin: EdgeInsets.only(
+                        top: 20, right: 10, left: 10, bottom: 20),
                     child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text("Pesquisar sobre"),
+                      onPressed: () {
+                        //ABRIR LINK DE PESQUISA NO GOOGLE
+
+                        print('PESQUISA 3');
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.search_outlined),
+                          Padding(
+                            padding: EdgeInsets.all(16),
+                            child: Text(
+                              'Pesquisar Sobre',
+                              style: TextStyle(
+                                  fontSize: 15, fontWeight: FontWeight.w100),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ],

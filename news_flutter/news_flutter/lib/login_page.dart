@@ -13,19 +13,18 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget initialBody() {
     return Padding(
-      padding: const EdgeInsets.only(top: 20, bottom: 50, right: 0, left: 0),
+      padding: const EdgeInsets.only(top: 50, bottom: 50, right: 0, left: 0),
       child: SingleChildScrollView(
         child: Column(
           children: [
             Card(
               child: Column(
                 children: [
-                  SizedBox(height: 20),
                   SizedBox(
                     height: MediaQuery.of(context).size.height,
                     width: double.infinity,
                     child: Padding(
-                      padding: const EdgeInsets.all(30.0),
+                      padding: const EdgeInsets.all(20.0),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -36,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
                                 width: 50,
                                 child: Icon(
                                   Icons.timer_outlined,
-                                  color: Colors.red,
+                                  color: Colors.indigo,
                                   size: 50,
                                 ),
                               ),
@@ -57,14 +56,14 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           SizedBox(height: 15),
                           Text(
-                            'Tudo em um só lugar & personalizado para você.',
+                            'Notícias para se ler em 30 segundos.',
                             style: TextStyle(fontSize: 20),
                           ),
                           Text(
-                            'Notícias de hoje de todo o Brasil.',
-                            style: TextStyle(fontSize: 20),
+                            'De todo o mundo para você.',
+                            style: TextStyle(fontSize: 18),
                           ),
-                          SizedBox(height: 150),
+                          SizedBox(height: 20),
                           TextField(
                             onChanged: (text) {
                               userLogin = text;
@@ -98,11 +97,10 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                             ),
                           ),
-                          SizedBox(height: 10),
-                          ButtonTheme(
-                            height: 60.0,
-                            child: RaisedButton(
-                              color: Colors.white,
+                          Container(
+                            alignment: Alignment.bottomCenter,
+                            margin: EdgeInsets.only(top: 20),
+                            child: ElevatedButton(
                               onPressed: () {
                                 if (userLogin == 'Gustavo' &&
                                     passwordLogin == "123") {
@@ -113,12 +111,20 @@ class _LoginPageState extends State<LoginPage> {
                                       .pushReplacementNamed('/');
                                 }
                               },
-                              child: Text(
-                                'Começe a ler',
-                                style: TextStyle(
-                                    color: Colors.red,
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.bold),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(Icons.book),
+                                  Padding(
+                                    padding: EdgeInsets.all(16),
+                                    child: Text(
+                                      'Começe a ler',
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w100),
+                                    ),
+                                  )
+                                ],
                               ),
                             ),
                           ),

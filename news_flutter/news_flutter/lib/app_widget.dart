@@ -15,7 +15,7 @@ class AppWidget extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-              primarySwatch: Colors.red,
+              primarySwatch: Colors.indigo,
               brightness: AppController.instance.isDartTheme
                   ? Brightness.dark
                   : Brightness.light),
@@ -23,8 +23,10 @@ class AppWidget extends StatelessWidget {
           routes: {
             '/': (context) => LoginPage(),
             '/home': (context) => HomePage(),
-            /*  '/money': (context) => classHere(),
-            '/tech': (context) => classHere(),*/
+            /*  
+            '/money': (context) => classHere(),
+            '/tech': (context) => classHere(),
+            */
             '/games': (context) => GamesPage(),
           },
         );
