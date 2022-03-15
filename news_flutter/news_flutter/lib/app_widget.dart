@@ -3,6 +3,7 @@ import 'package:news_flutter/games_page.dart';
 import 'package:news_flutter/login_page.dart';
 import 'app_controller.dart';
 import 'home_page.dart';
+import 'url_links.dart';
 
 class AppWidget extends StatelessWidget {
   static final title = ["30", "seconds"];
@@ -19,7 +20,7 @@ class AppWidget extends StatelessWidget {
               brightness: AppController.instance.isDartTheme
                   ? Brightness.dark
                   : Brightness.light),
-          initialRoute: '/',
+          initialRoute: '/links',
           routes: {
             '/': (context) => LoginPage(),
             '/home': (context) => HomePage(),
@@ -28,6 +29,7 @@ class AppWidget extends StatelessWidget {
             '/tech': (context) => classHere(),
             */
             '/games': (context) => GamesPage(),
+            '/links': (context) => UrlLinks(),
           },
         );
       },

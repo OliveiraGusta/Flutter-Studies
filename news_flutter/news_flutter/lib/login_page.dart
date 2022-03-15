@@ -26,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,

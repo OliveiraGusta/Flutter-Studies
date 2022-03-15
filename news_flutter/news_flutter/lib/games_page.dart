@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_flutter/home_page.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'app_controller.dart';
 import 'app_widget.dart';
 
@@ -11,6 +12,14 @@ class GamesPage extends StatefulWidget {
 }
 
 class _GamesPageState extends State<GamesPage> {
+  Future<void> _launcherLink(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url, forceWebView: false, forceSafariVC: false);
+    } else {
+      print('O link $url não pode ser executado');
+    }
+  }
+
   Widget drawer() {
     return Drawer(
       child: Column(
@@ -77,67 +86,74 @@ class _GamesPageState extends State<GamesPage> {
     return SingleChildScrollView(
       child: Column(
         children: [
+          //1º NOTICA
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Card(
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        top: 10, right: 10, bottom: 2, left: 10),
-                    child: SizedBox(
-                      child: Image.network(
-                          'https://img.olhardigital.com.br/wp-content/uploads/2022/03/Minecraft-1024x532.jpg'),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(30),
+              child: Card(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          top: 20, right: 10, bottom: 5, left: 10),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(40),
+                        child: Image.network(
+                            'https://img.olhardigital.com.br/wp-content/uploads/2022/03/Minecraft-1024x532.jpg'),
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 2),
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Column(
-                      children: [
-                        Text(
-                          "Programador lidera time que irá recriar cidade inteira de Nova Iorque dentro do Minecraft",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(height: 10),
-                        Text(
-                          "O valor é o dobro do acordo atual. A EA não deve aceitar os novos termos e poderá mudar o nome do jogo para “EA Sports F.C.”. O primeiro jogo da série, “FIFA International Soccer”, foi lançado há quase 30 anos, em 1993. As informações são do The New York Times.",
-                          textAlign: TextAlign.center,
-                          // style: TextStyle(color: Colors.white),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    alignment: Alignment.bottomCenter,
-                    margin: EdgeInsets.only(
-                        top: 20, right: 10, left: 10, bottom: 20),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        //ABRIR LINK DE PESQUISA NO GOOGLE
-                        print('PESQUISA 1');
-                      },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                    SizedBox(height: 2),
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Column(
                         children: [
-                          Icon(Icons.search_outlined),
-                          Padding(
-                            padding: EdgeInsets.all(16),
-                            child: Text(
-                              'Pesquisar Sobre',
-                              style: TextStyle(
-                                  fontSize: 15, fontWeight: FontWeight.w100),
-                            ),
-                          )
+                          Text(
+                            "Programador lidera time que irá recriar cidade inteira de Nova Iorque dentro do Minecraft",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "O valor é o dobro do acordo atual. A EA não deve aceitar os novos termos e poderá mudar o nome do jogo para “EA Sports F.C.”. O primeiro jogo da série, “FIFA International Soccer”, foi lançado há quase 30 anos, em 1993. As informações são do The New York Times.",
+                            textAlign: TextAlign.center,
+                            // style: TextStyle(color: Colors.white),
+                          ),
                         ],
                       ),
                     ),
-                  ),
-                ],
+                    Container(
+                      alignment: Alignment.bottomCenter,
+                      margin: EdgeInsets.only(
+                          top: 20, right: 10, left: 10, bottom: 25),
+                      child: ElevatedButton(
+                        onPressed: () => _launcherLink(
+                            "https://www.google.com/search?q=Programador+lidera+time+que+irá+recriar+cidade+inteira+de+Nova+Iorque+dentro+do+Minecraft"),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.search_outlined),
+                            Padding(
+                              padding: EdgeInsets.all(16),
+                              child: Text(
+                                'Pesquisar Sobre',
+                                style: TextStyle(
+                                    fontSize: 15, fontWeight: FontWeight.w100),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    
+                  ],
+                ),
               ),
             ),
           ),
+          //FIM 1 NOTICA
+/*
+          //2º noticia
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Card(
@@ -206,6 +222,9 @@ class _GamesPageState extends State<GamesPage> {
               ),
             ),
           ),
+          //FIM 2º noticia
+
+          //3º noticia
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Card(
@@ -274,7 +293,9 @@ class _GamesPageState extends State<GamesPage> {
                 ],
               ),
             ),
-          ),
+          ),*/
+
+          //fim 3º noticia
         ],
       ),
     );
