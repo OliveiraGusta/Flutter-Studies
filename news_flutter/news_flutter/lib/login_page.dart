@@ -114,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                     margin: EdgeInsets.only(top: 20),
                     child: ElevatedButton(
                       onPressed: () {
-                        if (userLogin == 'Gustavo' && passwordLogin == "123") {
+                        if (userLogin == 'Admin' && passwordLogin == "123") {
                           Navigator.of(context).pushReplacementNamed('/home');
                         } else {
                           Navigator.of(context).pushReplacementNamed('/');
@@ -152,13 +152,8 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: Stack(
         children: [
-          SizedBox(
-              height: MediaQuery.of(context).size.height,
-              child: Image.network(
-                  'https://1.bp.blogspot.com/-02BZ3kdt-No/XXR8cgm1FHI/AAAAAAAAB7k/CtrMdhE8Lyg7irDz4cVw-kPyFFj-0crIwCLcBGAs/s1600/Color%2Bbars.jpg',
-                  fit: BoxFit.cover)),
           Container(
-            color: Colors.black.withOpacity(0.3),
+            color: Color.fromARGB(255, 185, 208, 220).withOpacity(0.3),
           ),
           initialBody(),
         ],

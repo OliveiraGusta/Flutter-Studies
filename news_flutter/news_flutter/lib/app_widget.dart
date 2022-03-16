@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:news_flutter/games_page.dart';
-import 'package:news_flutter/login_page.dart';
 import 'app_controller.dart';
 import 'home_page.dart';
+import 'games_page.dart';
+import 'login_page.dart';
+import 'technology_page.dart';
+import 'economy_page.dart';
 
 class AppWidget extends StatelessWidget {
   static final title = ["30", "SECONDS", 'NEWS'];
@@ -23,10 +25,8 @@ class AppWidget extends StatelessWidget {
           routes: {
             '/': (context) => LoginPage(),
             '/home': (context) => HomePage(),
-            /*  
-            '/economy': (context) => classHere(),
-            '/technology': (context) => classHere(),
-            */
+            '/economy': (context) => EconomyPage(),
+            '/technology': (context) => TechnologyPage(),
             '/games': (context) => GamesPage(),
           },
         );

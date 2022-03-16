@@ -1,16 +1,25 @@
 import 'package:flutter/material.dart';
-
+import 'package:news_flutter/home_page.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'app_controller.dart';
 import 'app_widget.dart';
 
-class HomePage extends StatefulWidget {
+class EconomyPage extends StatefulWidget {
   @override
-  State<HomePage> createState() {
-    return HomePageState();
+  State<EconomyPage> createState() {
+    return _EconomyPageState();
   }
 }
 
-class HomePageState extends State<HomePage> {
+class _EconomyPageState extends State<EconomyPage> {
+  void _launcherLink(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url, forceWebView: false, forceSafariVC: false);
+    } else {
+      print('O link $url não pode ser executado');
+    }
+  }
+
   Widget drawer() {
     return Drawer(
       child: Column(
@@ -76,61 +85,14 @@ class HomePageState extends State<HomePage> {
     );
   }
 
-  Widget homePageBody() {
+  Widget economyPageBody() {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(bottom: 8.0),
-            child: Container(
-              width: double.infinity,
-              height: 450,
-              color: Colors.green,
-            ),
-          ),
-          Row(
-            children: [
-              Container(
-                  height: 300,
-                  width: MediaQuery.of(context).size.width / 2,
-                  color: Colors.blue),
-              Container(
-                  height: 300,
-                  width: MediaQuery.of(context).size.width / 2,
-                  color: Colors.red),
-            ],
-          ),
-          Container(height: 300, width: double.infinity, color: Colors.black),
-          Row(
-            children: [
-              Container(
-                  height: 300,
-                  width: MediaQuery.of(context).size.width / 2,
-                  color: Colors.blue),
-              Container(
-                  height: 300,
-                  width: MediaQuery.of(context).size.width / 2,
-                  color: Colors.red),
-            ],
-          ),
-          Container(height: 300, width: double.infinity, color: Colors.black),
-          Row(
-            children: [
-              Container(
-                  height: 300,
-                  width: MediaQuery.of(context).size.width / 2,
-                  color: Colors.blue),
-              Container(
-                  height: 300,
-                  width: MediaQuery.of(context).size.width / 2,
-                  color: Colors.red),
-            ],
-          ),
-          Container(height: 300, width: double.infinity, color: Colors.black),
-          Text(
-            'By Gustavo Oliveira',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          ),
+          //1º NOTICA
+         
+         
+          //FIM 1 notiicia
         ],
       ),
     );
@@ -157,7 +119,7 @@ class HomePageState extends State<HomePage> {
             SizedBox(
               width: 5,
             ),
-            Text(AppWidget.title[1] + " " + AppWidget.title[2]),
+            Text(AppWidget.title[1] + " ECONOMY " + AppWidget.title[2]),
           ],
         ),
         centerTitle: true,
@@ -167,21 +129,9 @@ class HomePageState extends State<HomePage> {
           Container(
             color: Color.fromARGB(255, 185, 208, 220).withOpacity(0.3),
           ),
-          homePageBody(),
+          economyPageBody(),
         ],
       ),
-    );
-  }
-}
-
-class CustomSwith extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Switch(
-      value: AppController.instance.isDartTheme,
-      onChanged: (value) {
-        AppController.instance.changeTheme();
-      },
     );
   }
 }
