@@ -4,9 +4,8 @@ import 'package:news_flutter/login_page.dart';
 import 'app_controller.dart';
 import 'home_page.dart';
 
-
 class AppWidget extends StatelessWidget {
-  static final title = ["30", "seconds"];
+  static final title = ["30", "SECONDS", 'NEWS'];
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +28,6 @@ class AppWidget extends StatelessWidget {
             '/technology': (context) => classHere(),
             */
             '/games': (context) => GamesPage(),
-            
           },
         );
       },

@@ -106,7 +106,72 @@ class _GamesPageState extends State<GamesPage> {
                     SizedBox(height: 2),
                     Padding(
                       padding: const EdgeInsets.all(10.0),
-                      child: Column(                       
+                      child: Column(
+                        children: [
+                          Text(
+                            "Programador lidera time que irá recriar cidade inteira de Nova Iorque dentro do Minecraft",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "O valor é o dobro do acordo atual. A EA não deve aceitar os novos termos e poderá mudar o nome do jogo para “EA Sports F.C.”. O primeiro jogo da série, “FIFA International Soccer”, foi lançado há quase 30 anos, em 1993. As informações são do The New York Times.",
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      alignment: Alignment.bottomCenter,
+                      margin: EdgeInsets.only(
+                          top: 20, right: 10, left: 10, bottom: 25),
+                      child: ElevatedButton(
+                        onPressed: () => _launcherLink(
+                            "https://www.google.com/search?q=Programador+lidera+time+que+irá+recriar+cidade+inteira+de+Nova+Iorque+dentro+do+Minecraft"),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.search_outlined),
+                            Padding(
+                              padding: EdgeInsets.all(16),
+                              child: Text(
+                                'Pesquisar Sobre',
+                                style: TextStyle(
+                                    fontSize: 15, fontWeight: FontWeight.w100),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          //FIM 1 notiicia
+
+          //2º Noticia
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(30),
+              child: Card(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          top: 20, right: 10, bottom: 5, left: 10),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(40),
+                        child: Image.network(
+                            'https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_SuperMario3DWorldAndBowsersFury_image1600w.jpg'),
+                      ),
+                    ),
+                    SizedBox(height: 2),
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Column(
                         children: [
                           Text(
                             "Programador lidera time que irá recriar cidade inteira de Nova Iorque dentro do Minecraft",
@@ -144,72 +209,7 @@ class _GamesPageState extends State<GamesPage> {
                           ],
                         ),
                       ),
-                    ),                   
-                  ],
-                ),
-              ),
-            ),
-          ),
-          //FIM 1 notiicia
-
-          //2º Noticia
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(30),
-              child: Card(
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          top: 20, right: 10, bottom: 5, left: 10),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(40),
-                        child: Image.network(
-                            'https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_SuperMario3DWorldAndBowsersFury_image1600w.jpg'),
-                      ),
                     ),
-                    SizedBox(height: 2),
-                    Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Column(                       
-                        children: [
-                          Text(
- "Programador lidera time que irá recriar cidade inteira de Nova Iorque dentro do Minecraft",                            textAlign: TextAlign.center,
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            "O valor é o dobro do acordo atual. A EA não deve aceitar os novos termos e poderá mudar o nome do jogo para “EA Sports F.C.”. O primeiro jogo da série, “FIFA International Soccer”, foi lançado há quase 30 anos, em 1993. As informações são do The New York Times.",
-                            textAlign: TextAlign.center,
-                            // style: TextStyle(color: Colors.white),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      alignment: Alignment.bottomCenter,
-                      margin: EdgeInsets.only(
-                          top: 20, right: 10, left: 10, bottom: 25),
-                      child: ElevatedButton(
-                        onPressed: () => _launcherLink(
-                            "https://www.google.com/search?q=Programador+lidera+time+que+irá+recriar+cidade+inteira+de+Nova+Iorque+dentro+do+Minecraft"),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.search_outlined),
-                            Padding(
-                              padding: EdgeInsets.all(16),
-                              child: Text(
-                                'Pesquisar Sobre',
-                                style: TextStyle(
-                                    fontSize: 15, fontWeight: FontWeight.w100),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),                   
                   ],
                 ),
               ),
@@ -237,7 +237,7 @@ class _GamesPageState extends State<GamesPage> {
                     SizedBox(height: 2),
                     Padding(
                       padding: const EdgeInsets.all(10.0),
-                      child: Column(                       
+                      child: Column(
                         children: [
                           Text(
                             "Programador lidera time que irá recriar cidade inteira de Nova Iorque dentro do Minecraft",
@@ -436,7 +436,25 @@ class _GamesPageState extends State<GamesPage> {
     return Scaffold(
       endDrawer: drawer(),
       appBar: AppBar(
-        title: Text(AppWidget.title.first + " Gaming " + AppWidget.title.last),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              AppWidget.title[0],
+              style: TextStyle(
+                fontSize: 30,
+              ),
+            ),
+            Icon(
+              Icons.timer_outlined,
+              size: 30,
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            Text("GAMES " + AppWidget.title[1] + " " + AppWidget.title[2]),
+          ],
+        ),
         centerTitle: true,
       ),
       body: gamesPageBody(),
