@@ -12,7 +12,7 @@ class GamesPage extends StatefulWidget {
 }
 
 class _GamesPageState extends State<GamesPage> {
-  Future<void> _launcherLink(String url) async {
+  void _launcherLink(String url) async {
     if (await canLaunch(url)) {
       await launch(url, forceWebView: false, forceSafariVC: false);
     } else {
@@ -145,7 +145,6 @@ class _GamesPageState extends State<GamesPage> {
                         ),
                       ),
                     ),
-                    
                   ],
                 ),
               ),
