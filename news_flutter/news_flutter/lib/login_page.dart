@@ -68,11 +68,11 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   SizedBox(height: 15),
                   Text(
-                    'Notícias para se ler em 30 segundos.',
+                    'Notícias em 30 segundos.',
                     style: TextStyle(fontSize: 20),
                   ),
                   Text(
-                    'De todo o mundo para você.',
+                    'Para quem não tem tempo de ler notícias.',
                     style: TextStyle(fontSize: 18),
                   ),
                   SizedBox(height: 50),
@@ -114,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                     margin: EdgeInsets.only(top: 20),
                     child: ElevatedButton(
                       onPressed: () {
-                        if (userLogin == 'Admin' && passwordLogin == "123") {
+                        if (userLogin == 'admin' && passwordLogin == "123") {
                           Navigator.of(context).pushReplacementNamed('/home');
                         } else {
                           Navigator.of(context).pushReplacementNamed('/');
