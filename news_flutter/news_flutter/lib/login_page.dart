@@ -114,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                     margin: EdgeInsets.only(top: 20),
                     child: ElevatedButton(
                       onPressed: () {
-                        if (userLogin == 'admin' && passwordLogin == "123") {
+                        if (userLogin == "Gustavo" && passwordLogin == "123") {
                           Navigator.of(context).pushReplacementNamed('/home');
                         } else {
                           Navigator.of(context).pushReplacementNamed('/');
@@ -153,7 +153,7 @@ class _LoginPageState extends State<LoginPage> {
       body: Stack(
         children: [
           Container(
-            color: Color.fromARGB(255, 185, 208, 220).withOpacity(0.3),
+            color: Colors.blue.withOpacity(0.05),
           ),
           initialBody(),
         ],

@@ -89,7 +89,7 @@ class _TechnologyPageState extends State<TechnologyPage> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          //1º NOTICIA
+          //1 News
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: ClipRRect(
@@ -194,9 +194,9 @@ class _TechnologyPageState extends State<TechnologyPage> {
               ),
             ),
           ),
-          //FIM 1 NOTICIA
+          //END 1 News
 
-          //2º NOTICIA
+          // 2nd News
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: ClipRRect(
@@ -301,9 +301,9 @@ class _TechnologyPageState extends State<TechnologyPage> {
               ),
             ),
           ),
-          //FIM 2 NOTICIA
+          //END 2nd News
 
-          //3º NOTICIA
+          //3 News
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: ClipRRect(
@@ -408,7 +408,7 @@ class _TechnologyPageState extends State<TechnologyPage> {
               ),
             ),
           ),
-          //FIM 3° NOTICIA
+          //END 3 News
         ],
       ),
     );
@@ -443,8 +443,7 @@ class _TechnologyPageState extends State<TechnologyPage> {
       body: Stack(
         children: [
           Container(
-            color: Color.fromARGB(255, 185, 208, 220).withOpacity(0.3),
-          ),
+ color: Colors.blue.withOpacity(0.05),          ),
           technologyPageBody(),
         ],
       ),

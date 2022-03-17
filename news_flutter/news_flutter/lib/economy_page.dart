@@ -316,29 +316,28 @@ class _EconomyPageState extends State<EconomyPage> {
                     context: context,
                     builder: (context) {
                       return AlertDialog(
-                        title: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(40),
-                                child: Image.network(
-                                  "https://s2.glbimg.com/ijq39j7pihxIY7-6dmb2MotdXOc=/1200x/smart/filters:cover():strip_icc()/s01.video.glbimg.com/x720/6609120.jpg",
+                          title: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(40),
+                                  child: Image.network(
+                                    "https://s2.glbimg.com/ijq39j7pihxIY7-6dmb2MotdXOc=/1200x/smart/filters:cover():strip_icc()/s01.video.glbimg.com/x720/6609120.jpg",
+                                  ),
                                 ),
-                              ),
-                              SizedBox(height: 10),
-                              Text(
-                                "Câmara regulamenta negociação com moedas virtuais",
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
+                                SizedBox(height: 10),
+                                Text(
+                                  "Câmara regulamenta negociação com moedas virtuais",
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                        content: Text(
-                          "O Projeto de Lei 2303/15 define o que é um ativo virtual — representação digital de valor negociado por meios eletrônicos e utilizado para realização de pagamentos ou investimento — e quem será considerado prestador de serviços na área. O texto também pretende coibir crimes de estelionato e lavagem de dinheiro relacionados a transações com esses ativos. As informações são da Agência Câmara de Notícias.",
-                          textAlign: TextAlign.center,
-                        )
-                      );
+                          content: Text(
+                            "O Projeto de Lei 2303/15 define o que é um ativo virtual — representação digital de valor negociado por meios eletrônicos e utilizado para realização de pagamentos ou investimento — e quem será considerado prestador de serviços na área. O texto também pretende coibir crimes de estelionato e lavagem de dinheiro relacionados a transações com esses ativos. As informações são da Agência Câmara de Notícias.",
+                            textAlign: TextAlign.center,
+                          ));
                     },
                   );
                 },
@@ -552,7 +551,7 @@ class _EconomyPageState extends State<EconomyPage> {
       body: Stack(
         children: [
           Container(
-            color: Color.fromARGB(255, 185, 208, 220).withOpacity(0.3),
+            color: Colors.blue.withOpacity(0.05),
           ),
           economyPageBody(),
         ],

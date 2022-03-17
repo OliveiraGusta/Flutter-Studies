@@ -554,8 +554,7 @@ class _GamesPageState extends State<GamesPage> {
       body: Stack(
         children: [
           Container(
-            color: Color.fromARGB(255, 185, 208, 220).withOpacity(0.3),
-          ),
+ color: Colors.blue.withOpacity(0.05),          ),
           gamesPageBody(),
         ],
       ),
