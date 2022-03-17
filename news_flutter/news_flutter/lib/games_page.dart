@@ -84,25 +84,23 @@ class _GamesPageState extends State<GamesPage> {
       ),
     );
   }
-  
+
   Widget titleGamesPage() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
           AppWidget.title[0],
-          style: TextStyle(
-            fontSize: 30,
-          ),
         ),
         Icon(
           Icons.timer_outlined,
-          size: 30,
         ),
-        SizedBox(
-          width: 5,
+        Text(
+          AppWidget.title[1] + " GAMING " + AppWidget.title[2],
+          style: TextStyle(
+            fontSize: 15,
+          ),
         ),
-        Text(AppWidget.title[1] + " GAMING " + AppWidget.title[2]),
       ],
     );
   }
@@ -122,27 +120,29 @@ class _GamesPageState extends State<GamesPage> {
               showDialog(
                 context: context,
                 builder: (context) {
-                  return AlertDialog(
-                    title: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(40),
-                            child: Image.network(
-                                'https://cdn.ome.lt/xKT3NZ8b_pN4wsdqpdFj2ocDDts=/1200x630/smart/extras/conteudos/FIFA_22.png'),
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            "FIFA quer 1 bilhão de dólares para manter marca da organização na série de jogos de futebol da Electronic Arts",
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
+                  return SingleChildScrollView(
+                    child: AlertDialog(
+                      title: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(40),
+                              child: Image.network(
+                                  'https://cdn.ome.lt/xKT3NZ8b_pN4wsdqpdFj2ocDDts=/1200x630/smart/extras/conteudos/FIFA_22.png'),
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              "FIFA quer 1 bilhão de dólares para manter marca da organização na série de jogos de futebol da Electronic Arts",
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    content: Text(
-                      "O valor é o dobro do acordo atual. A EA não deve aceitar os novos termos e poderá mudar o nome do jogo para “EA Sports F.C.”. O primeiro jogo da série, “FIFA International Soccer”, foi lançado há quase 30 anos, em 1993. As informações são do The New York Times.",
-                      textAlign: TextAlign.center,
+                      content: Text(
+                        "O valor é o dobro do acordo atual. A EA não deve aceitar os novos termos e poderá mudar o nome do jogo para “EA Sports F.C.”. O primeiro jogo da série, “FIFA International Soccer”, foi lançado há quase 30 anos, em 1993. As informações são do The New York Times.",
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   );
                 },
@@ -231,27 +231,29 @@ class _GamesPageState extends State<GamesPage> {
               showDialog(
                 context: context,
                 builder: (context) {
-                  return AlertDialog(
-                    title: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(40),
-                            child: Image.network(
-                                'https://cdn.trendsbr.com.br/uploads/noticias/2021/12/19/1hk92gwqcjk3a.jpg'),
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            "Conjunto de células cerebrais humanas aprendem a jogar Pong em laboratório mais rápido do que IAs",
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
+                  return SingleChildScrollView(
+                    child: AlertDialog(
+                      title: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(40),
+                              child: Image.network(
+                                  'https://cdn.trendsbr.com.br/uploads/noticias/2021/12/19/1hk92gwqcjk3a.jpg'),
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              "Conjunto de células cerebrais humanas aprendem a jogar Pong em laboratório mais rápido do que IAs",
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    content: Text(
-                      "Os “minicérebros” são colocados em cima de uma matriz de microeletrodos que analisa sua atividade neural. Embora não consigam jogar tão bem quanto um ser humano, os minicérebros aprendem a controlar o jogo mais rápido do que sistemas de inteligência artificial. As informações são do site Futurism.",
-                      textAlign: TextAlign.center,
+                      content: Text(
+                        "Os “minicérebros” são colocados em cima de uma matriz de microeletrodos que analisa sua atividade neural. Embora não consigam jogar tão bem quanto um ser humano, os minicérebros aprendem a controlar o jogo mais rápido do que sistemas de inteligência artificial. As informações são do site Futurism.",
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   );
                 },
@@ -339,27 +341,29 @@ class _GamesPageState extends State<GamesPage> {
               showDialog(
                 context: context,
                 builder: (context) {
-                  return AlertDialog(
-                    title: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(40),
-                            child: Image.network(
-                                "https://img.ibxk.com.br/2021/11/02/02170930807000.jpeg"),
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            "Brasileiro de 17 anos ganha bolsa de estudo para jogar Fortnite em universidade dos EUA",
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
+                  return SingleChildScrollView(
+                    child: AlertDialog(
+                      title: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(40),
+                              child: Image.network(
+                                  "https://img.ibxk.com.br/2021/11/02/02170930807000.jpeg"),
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              "Brasileiro de 17 anos ganha bolsa de estudo para jogar Fortnite em universidade dos EUA",
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    content: Text(
-                      "Guilherme Mannarino foi aprovado em 31 universidades estrangeiras, mas escolheu a bolsa integral oferecida pela Universidade da Flórida Central, em Orlando. Por causa de sua habilidade no jogo, as faculdades queriam Mannarino em seus times de e-sports. O jovem irá cursar engenharia da computação na instituição.",
-                      textAlign: TextAlign.center,
+                      content: Text(
+                        "Guilherme Mannarino foi aprovado em 31 universidades estrangeiras, mas escolheu a bolsa integral oferecida pela Universidade da Flórida Central, em Orlando. Por causa de sua habilidade no jogo, as faculdades queriam Mannarino em seus times de e-sports. O jovem irá cursar engenharia da computação na instituição.",
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   );
                 },
@@ -449,27 +453,29 @@ class _GamesPageState extends State<GamesPage> {
               showDialog(
                 context: context,
                 builder: (context) {
-                  return AlertDialog(
-                    title: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(40),
-                            child: Image.network(
-                                "https://img.olhardigital.com.br/wp-content/uploads/2022/03/Minecraft.jpg"),
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            "Programador lidera time que irá recriar cidade inteira de Nova Iorque dentro do Minecraft",
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
+                  return SingleChildScrollView(
+                    child: AlertDialog(
+                      title: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(40),
+                              child: Image.network(
+                                  "https://img.olhardigital.com.br/wp-content/uploads/2022/03/Minecraft.jpg"),
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              "Programador lidera time que irá recriar cidade inteira de Nova Iorque dentro do Minecraft",
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    content: Text(
-                      "O time do alemão apenas conhecido como “Minefact” já conta com mais de 2.700 pessoas. Sua ideia é recriar cada detalhe da cidade em um escala de 1:1, com cada bloco de construção dentro do jogo representando um metro cúbico no mundo real. O desafio faz parte de um projeto ainda maior chamado “Build the Earth”, que já possui o contorno geológico da superfície da Terra. As informações são do site Curbed.",
-                      textAlign: TextAlign.center,
+                      content: Text(
+                        "O time do alemão apenas conhecido como “Minefact” já conta com mais de 2.700 pessoas. Sua ideia é recriar cada detalhe da cidade em um escala de 1:1, com cada bloco de construção dentro do jogo representando um metro cúbico no mundo real. O desafio faz parte de um projeto ainda maior chamado “Build the Earth”, que já possui o contorno geológico da superfície da Terra. As informações são do site Curbed.",
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   );
                 },

@@ -91,18 +91,14 @@ class HomePageState extends State<HomePage> {
       children: [
         Text(
           AppWidget.title[0],
-          style: TextStyle(
-            fontSize: 30,
-          ),
         ),
         Icon(
           Icons.timer_outlined,
-          size: 30,
         ),
-        SizedBox(
-          width: 5,
-        ),
-        Text(AppWidget.title[1] + " " + AppWidget.title[2]),
+        Text(AppWidget.title[1] + " " + AppWidget.title[2],
+            style: TextStyle(
+              fontSize: 15,
+            )),
       ],
     );
   }
@@ -116,56 +112,55 @@ class HomePageState extends State<HomePage> {
           showDialog(
             context: context,
             builder: (context) {
-              return AlertDialog(
-                title: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(40),
-                        child: Image.network(
-                            'https://cdn.trendsbr.com.br/uploads/noticias/2021/12/19/1hk92gwqcjk3a.jpg'),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        "Conjunto de células cerebrais humanas aprendem a jogar Pong em laboratório mais rápido do que IAs",
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
+              return SingleChildScrollView(
+                child: AlertDialog(
+                  title: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(40),
+                          child: Image.network(
+                              'https://cdn.trendsbr.com.br/uploads/noticias/2021/12/19/1hk92gwqcjk3a.jpg'),
+                        ),
+                        SizedBox(height: 10),
+                        Text(
+                          "Conjunto de células cerebrais humanas aprendem a jogar Pong em laboratório mais rápido do que IAs",
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                content: Text(
-                  "Os “minicérebros” são colocados em cima de uma matriz de microeletrodos que analisa sua atividade neural. Embora não consigam jogar tão bem quanto um ser humano, os minicérebros aprendem a controlar o jogo mais rápido do que sistemas de inteligência artificial. As informações são do site Futurism.",
-                  textAlign: TextAlign.center,
-                ),
-                actions: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context).pushNamed('/home');
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Row(
-                            children: [
-                              Icon(Icons.home),
-                              SizedBox(width: 5),
-                              Text("INICIO"),
-                            ],
+                  content: Text(
+                    "Os “minicérebros” são colocados em cima de uma matriz de microeletrodos que analisa sua atividade neural. Embora não consigam jogar tão bem quanto um ser humano, os minicérebros aprendem a controlar o jogo mais rápido do que sistemas de inteligência artificial. As informações são do site Futurism.",
+                    textAlign: TextAlign.center,
+                  ),
+                  actions: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context).pushNamed('/home');
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Row(
+                              children: [
+                                Icon(Icons.home),
+                                SizedBox(width: 5),
+                                Text("INICIO"),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      SizedBox(width: 10),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: ElevatedButton(
+                        SizedBox(width: 10),
+                        ElevatedButton(
                           onPressed: () {
                             Navigator.of(context).pushNamed('/games');
                           },
                           child: Padding(
-                            padding: const EdgeInsets.all(16.0),
+                            padding: const EdgeInsets.all(4.0),
                             child: Row(
                               children: [
                                 Icon(Icons.family_restroom_outlined),
@@ -174,17 +169,16 @@ class HomePageState extends State<HomePage> {
                               ],
                             ),
                           ),
-                        ),
-                      )
-                    ],
-                  )
-                ],
+                        )
+                      ],
+                    )
+                  ],
+                ),
               );
             },
           );
         },
         child: Container(
-          height: MediaQuery.of(context).size.height / 2,
           width: double.infinity,
           child: Stack(
             alignment: Alignment.bottomLeft,
@@ -197,6 +191,8 @@ class HomePageState extends State<HomePage> {
               ),
               Container(
                 color: Colors.black.withOpacity(0.6),
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height / 4.5,
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -267,62 +263,63 @@ class HomePageState extends State<HomePage> {
 
     Widget homePageNews2() {
       return // 2nd and 3rd News
-          Row(children: [
+          Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
         GestureDetector(
           onTap: () {
             showDialog(
               context: context,
               builder: (context) {
-                return AlertDialog(
-                  title: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(40),
-                          child: Image.network(
-                              "https://img.olhardigital.com.br/uploads/acervo_imagens/2015/10/20151008173723.jpg"),
+                return SingleChildScrollView(
+                  child: AlertDialog(
+                    title: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(40),
+                              child: Image.network(
+                                  "https://img.olhardigital.com.br/uploads/acervo_imagens/2015/10/20151008173723.jpg"),
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              "Garoto de 13 anos inventa “bafômetro” que utiliza inteligência artificial para detectar marcadores de pneumonia fúngica",
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
                         ),
-                        SizedBox(height: 10),
-                        Text(
-                          "Garoto de 13 anos inventa “bafômetro” que utiliza inteligência artificial para detectar marcadores de pneumonia fúngica",
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
+                      ),
                     ),
-                  ),
-                  content: Text(
-                    "Caleb combinou um projeto open source de nariz artificial com uma incubadora que detecta mudanças nas concentrações de compostos orgânicos voláteis na respiração e os correlaciona a processos metabólicos e patofisiológicos no corpo. Seu modelo pode ainda ser mais barato e mais facilmente empregado do que métodos utilizados hoje. Caleb decidiu criar o dispositivo após ter pneumonia aos nove anos de idade e aprofundar sua pesquisa em um projeto de ciências na escola onde estuda, nos EUA. As informações são do blog de Benjamin Cabé.",
-                    textAlign: TextAlign.center,
-                  ),
-                  actions: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {
-                            Navigator.of(context).pushNamed('/home');
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Row(
-                              children: [
-                                Icon(Icons.home),
-                                SizedBox(width: 5),
-                                Text("INICIO"),
-                              ],
+                    content: Text(
+                      "Caleb combinou um projeto open source de nariz artificial com uma incubadora que detecta mudanças nas concentrações de compostos orgânicos voláteis na respiração e os correlaciona a processos metabólicos e patofisiológicos no corpo. Seu modelo pode ainda ser mais barato e mais facilmente empregado do que métodos utilizados hoje. Caleb decidiu criar o dispositivo após ter pneumonia aos nove anos de idade e aprofundar sua pesquisa em um projeto de ciências na escola onde estuda, nos EUA. As informações são do blog de Benjamin Cabé.",
+                      textAlign: TextAlign.center,
+                    ),
+                    actions: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).pushNamed('/home');
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(4.0),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.home),
+                                  SizedBox(width: 5),
+                                  Text("INICIO"),
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                        SizedBox(width: 10),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: ElevatedButton(
+                          SizedBox(width: 2),
+                          ElevatedButton(
                             onPressed: () {
                               Navigator.of(context).pushNamed('/technology');
                             },
                             child: Padding(
-                              padding: const EdgeInsets.all(16.0),
+                              padding: const EdgeInsets.all(4.0),
                               child: Row(
                                 children: [
                                   Icon(Icons.family_restroom_outlined),
@@ -331,17 +328,17 @@ class HomePageState extends State<HomePage> {
                                 ],
                               ),
                             ),
-                          ),
-                        )
-                      ],
-                    )
-                  ],
+                          )
+                        ],
+                      )
+                    ],
+                  ),
                 );
               },
             );
           },
           child: Container(
-            width: MediaQuery.of(context).size.width / 2.084,
+            width: MediaQuery.of(context).size.width / 2.2,
             child: Padding(
               padding: const EdgeInsets.only(top: 2.0, right: 8.0, left: 8.0),
               child: Column(
@@ -429,56 +426,55 @@ class HomePageState extends State<HomePage> {
             showDialog(
               context: context,
               builder: (context) {
-                return AlertDialog(
-                  title: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(40),
-                          child: Image.network(
-                              "https://i0.wp.com/sumeonline.com.br/wp-content/uploads/2021/09/2021-08-26t220223z_740573968_rc29dp9zt4sp_rtrmadp_3_afghanistan-conflict-usa-biden_0-1.jpg"),
-                        ),
-                        SizedBox(height: 10),
-                        Text(
-                          "Presidente dos EUA emite ordem executiva para desenvolvimento do dólar digital",
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
+                return SingleChildScrollView(
+                  child: AlertDialog(
+                    title: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(40),
+                            child: Image.network(
+                                "https://i0.wp.com/sumeonline.com.br/wp-content/uploads/2021/09/2021-08-26t220223z_740573968_rc29dp9zt4sp_rtrmadp_3_afghanistan-conflict-usa-biden_0-1.jpg"),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "Presidente dos EUA emite ordem executiva para desenvolvimento do dólar digital",
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  content: Text(
-                    "O país irá avaliar benefícios e riscos para consumidores, investidores e empresas, estabilidade financeira, além de segurança nacional. Segundo Joe Biden, o Dólar digital pode habilitar formas de pagamento e transferências de baixo custo, especialmente internacionalmente, evitando os riscos associados a outras moedas digitais. Especialistas alertam, no entanto, que moedas digitais emitidas por bancos centrais podem ser utilizadas como ferramenta para vigilância governamental e de controle. As informações são do site Ars Technica.",
-                    textAlign: TextAlign.center,
-                  ),
-                  actions: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {
-                            Navigator.of(context).pushNamed('/home');
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Row(
-                              children: [
-                                Icon(Icons.home),
-                                SizedBox(width: 5),
-                                Text("INICIO"),
-                              ],
+                    content: Text(
+                      "O país irá avaliar benefícios e riscos para consumidores, investidores e empresas, estabilidade financeira, além de segurança nacional. Segundo Joe Biden, o Dólar digital pode habilitar formas de pagamento e transferências de baixo custo, especialmente internacionalmente, evitando os riscos associados a outras moedas digitais. Especialistas alertam, no entanto, que moedas digitais emitidas por bancos centrais podem ser utilizadas como ferramenta para vigilância governamental e de controle. As informações são do site Ars Technica.",
+                      textAlign: TextAlign.center,
+                    ),
+                    actions: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).pushNamed('/home');
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(4.0),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.home),
+                                  SizedBox(width: 5),
+                                  Text("INICIO"),
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                        SizedBox(width: 10),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: ElevatedButton(
+                          SizedBox(width: 10),
+                          ElevatedButton(
                             onPressed: () {
                               Navigator.of(context).pushNamed('/economy');
                             },
                             child: Padding(
-                              padding: const EdgeInsets.all(16.0),
+                              padding: const EdgeInsets.all(4.0),
                               child: Row(
                                 children: [
                                   Icon(Icons.family_restroom_outlined),
@@ -487,17 +483,17 @@ class HomePageState extends State<HomePage> {
                                 ],
                               ),
                             ),
-                          ),
-                        )
-                      ],
-                    )
-                  ],
+                          )
+                        ],
+                      )
+                    ],
+                  ),
                 );
               },
             );
           },
           child: Container(
-            width: MediaQuery.of(context).size.width / 2.084,
+            width: MediaQuery.of(context).size.width / 2.2,
             child: Padding(
               padding: const EdgeInsets.only(top: 2.0, right: 8.0, left: 8.0),
               child: Column(
@@ -584,56 +580,55 @@ class HomePageState extends State<HomePage> {
           showDialog(
             context: context,
             builder: (context) {
-              return AlertDialog(
-                title: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(40),
-                        child: Image.network(
-                            "https://img.olhardigital.com.br/wp-content/uploads/2020/10/20201002031900-1000x450.jpg"),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        "Vendas da Tesla disparam nos EUA com aumento no preço de combustíveis",
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
+              return SingleChildScrollView(
+                child: AlertDialog(
+                  title: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(40),
+                          child: Image.network(
+                              "https://img.olhardigital.com.br/wp-content/uploads/2020/10/20201002031900-1000x450.jpg"),
+                        ),
+                        SizedBox(height: 10),
+                        Text(
+                          "Vendas da Tesla disparam nos EUA com aumento no preço de combustíveis",
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                content: Text(
-                  "As encomendas de novos veículos da marca teriam registrado um aumento de 100% apenas na última semana. A montadora, no entanto, não dá conta de produzir toda a demanda. A Tesla é a maior fabricante de veículos elétricos nos EUA, com cerca de 80% do mercado. As informações são do site Electrek.",
-                  textAlign: TextAlign.center,
-                ),
-                actions: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context).pushNamed('/home');
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Row(
-                            children: [
-                              Icon(Icons.home),
-                              SizedBox(width: 5),
-                              Text("INICIO"),
-                            ],
+                  content: Text(
+                    "As encomendas de novos veículos da marca teriam registrado um aumento de 100% apenas na última semana. A montadora, no entanto, não dá conta de produzir toda a demanda. A Tesla é a maior fabricante de veículos elétricos nos EUA, com cerca de 80% do mercado. As informações são do site Electrek.",
+                    textAlign: TextAlign.center,
+                  ),
+                  actions: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context).pushNamed('/home');
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Row(
+                              children: [
+                                Icon(Icons.home),
+                                SizedBox(width: 5),
+                                Text("INICIO"),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      SizedBox(width: 10),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: ElevatedButton(
+                        SizedBox(width: 10),
+                        ElevatedButton(
                           onPressed: () {
                             Navigator.of(context).pushNamed('/economy');
                           },
                           child: Padding(
-                            padding: const EdgeInsets.all(16.0),
+                            padding: const EdgeInsets.all(4.0),
                             child: Row(
                               children: [
                                 Icon(Icons.family_restroom_outlined),
@@ -642,11 +637,11 @@ class HomePageState extends State<HomePage> {
                               ],
                             ),
                           ),
-                        ),
-                      )
-                    ],
-                  )
-                ],
+                        )
+                      ],
+                    )
+                  ],
+                ),
               );
             },
           );
@@ -752,56 +747,55 @@ class HomePageState extends State<HomePage> {
               showDialog(
                 context: context,
                 builder: (context) {
-                  return AlertDialog(
-                    title: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(40),
-                            child: Image.network(
-                                "https://pplware.sapo.pt/wp-content/uploads/2022/03/facebook_00-1.jpg"),
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            "Facebook e Instagram permitirão postagens incentivando violência contra russos",
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
+                  return SingleChildScrollView(
+                    child: AlertDialog(
+                      title: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(40),
+                              child: Image.network(
+                                  "https://pplware.sapo.pt/wp-content/uploads/2022/03/facebook_00-1.jpg"),
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              "Facebook e Instagram permitirão postagens incentivando violência contra russos",
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    content: Text(
-                      "A Reuters teria obtido e-mails internos da Meta delineando as mudanças em políticas de discurso de ódio no contexto da guerra na Ucrânia. As mudanças seriam temporárias e se aplicariam a posts originados da Letônia, Lituânia, Estônia, Polônia, Eslováquia, Hungria, Romênia, Rússia e Ucrânia. As informações são da Reuters.",
-                      textAlign: TextAlign.center,
-                    ),
-                    actions: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          ElevatedButton(
-                            onPressed: () {
-                              Navigator.of(context).pushNamed('/home');
-                            },
-                            child: Padding(
-                              padding: const EdgeInsets.all(16.0),
-                              child: Row(
-                                children: [
-                                  Icon(Icons.home),
-                                  SizedBox(width: 5),
-                                  Text("INICIO"),
-                                ],
+                      content: Text(
+                        "A Reuters teria obtido e-mails internos da Meta delineando as mudanças em políticas de discurso de ódio no contexto da guerra na Ucrânia. As mudanças seriam temporárias e se aplicariam a posts originados da Letônia, Lituânia, Estônia, Polônia, Eslováquia, Hungria, Romênia, Rússia e Ucrânia. As informações são da Reuters.",
+                        textAlign: TextAlign.center,
+                      ),
+                      actions: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.of(context).pushNamed('/home');
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.all(4.0),
+                                child: Row(
+                                  children: [
+                                    Icon(Icons.home),
+                                    SizedBox(width: 5),
+                                    Text("INICIO"),
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                          SizedBox(width: 10),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: ElevatedButton(
+                            SizedBox(width: 10),
+                            ElevatedButton(
                               onPressed: () {
                                 Navigator.of(context).pushNamed('/technology');
                               },
                               child: Padding(
-                                padding: const EdgeInsets.all(16.0),
+                                padding: const EdgeInsets.all(4.0),
                                 child: Row(
                                   children: [
                                     Icon(Icons.family_restroom_outlined),
@@ -810,18 +804,17 @@ class HomePageState extends State<HomePage> {
                                   ],
                                 ),
                               ),
-                            ),
-                          )
-                        ],
-                      )
-                    ],
+                            )
+                          ],
+                        )
+                      ],
+                    ),
                   );
                 },
               );
             },
             child: Container(
-              height: 390,
-              width: MediaQuery.of(context).size.width / 2.084,
+              width: MediaQuery.of(context).size.width / 2.2,
               child: Padding(
                 padding: const EdgeInsets.only(top: 2.0, right: 8.0, left: 8.0),
                 child: Column(
@@ -911,56 +904,55 @@ class HomePageState extends State<HomePage> {
               showDialog(
                 context: context,
                 builder: (context) {
-                  return AlertDialog(
-                    title: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(40),
-                            child: Image.network(
-                                "https://img.ibxk.com.br/2021/11/02/02170930807000.jpeg"),
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            "Brasileiro de 17 anos ganha bolsa de estudo para jogar Fortnite em universidade dos EUA",
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
+                  return SingleChildScrollView(
+                    child: AlertDialog(
+                      title: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(40),
+                              child: Image.network(
+                                  "https://img.ibxk.com.br/2021/11/02/02170930807000.jpeg"),
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              "Brasileiro de 17 anos ganha bolsa de estudo para jogar Fortnite em universidade dos EUA",
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    content: Text(
-                      "Guilherme Mannarino foi aprovado em 31 universidades estrangeiras, mas escolheu a bolsa integral oferecida pela Universidade da Flórida Central, em Orlando. Por causa de sua habilidade no jogo, as faculdades queriam Mannarino em seus times de e-sports. O jovem irá cursar engenharia da computação na instituição.",
-                      textAlign: TextAlign.center,
-                    ),
-                    actions: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          ElevatedButton(
-                            onPressed: () {
-                              Navigator.of(context).pushNamed('/home');
-                            },
-                            child: Padding(
-                              padding: const EdgeInsets.all(16.0),
-                              child: Row(
-                                children: [
-                                  Icon(Icons.home),
-                                  SizedBox(width: 5),
-                                  Text("INICIO"),
-                                ],
+                      content: Text(
+                        "Guilherme Mannarino foi aprovado em 31 universidades estrangeiras, mas escolheu a bolsa integral oferecida pela Universidade da Flórida Central, em Orlando. Por causa de sua habilidade no jogo, as faculdades queriam Mannarino em seus times de e-sports. O jovem irá cursar engenharia da computação na instituição.",
+                        textAlign: TextAlign.center,
+                      ),
+                      actions: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.of(context).pushNamed('/home');
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.all(4.0),
+                                child: Row(
+                                  children: [
+                                    Icon(Icons.home),
+                                    SizedBox(width: 5),
+                                    Text("INICIO"),
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                          SizedBox(width: 10),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: ElevatedButton(
+                            SizedBox(width: 10),
+                            ElevatedButton(
                               onPressed: () {
                                 Navigator.of(context).pushNamed('/games');
                               },
                               child: Padding(
-                                padding: const EdgeInsets.all(16.0),
+                                padding: const EdgeInsets.all(4.0),
                                 child: Row(
                                   children: [
                                     Icon(Icons.family_restroom_outlined),
@@ -969,17 +961,17 @@ class HomePageState extends State<HomePage> {
                                   ],
                                 ),
                               ),
-                            ),
-                          )
-                        ],
-                      )
-                    ],
+                            )
+                          ],
+                        )
+                      ],
+                    ),
                   );
                 },
               );
             },
             child: Container(
-              width: MediaQuery.of(context).size.width / 2.084,
+              width: MediaQuery.of(context).size.width / 2.2,
               child: Padding(
                 padding: const EdgeInsets.only(top: 2.0, right: 8.0, left: 8.0),
                 child: Column(

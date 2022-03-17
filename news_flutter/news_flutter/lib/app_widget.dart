@@ -20,7 +20,8 @@ class AppWidget extends StatelessWidget {
               primarySwatch: Colors.indigo,
               brightness: AppController.instance.isDartTheme
                   ? Brightness.dark
-                  : Brightness.light),
+                  : Brightness.light,
+              fontFamily: 'Montserrat'),
           initialRoute: '/',
           routes: {
             '/': (context) => LoginPage(),
